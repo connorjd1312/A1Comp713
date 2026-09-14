@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>Project Tracker</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="index">
   <h1>Projects</h1>
 
   <form id="create-form">
     <input id="name" placeholder="New project name">
     <button type="submit">Create</button>
   </form>
+
+  <p id="error"></p>
 
   <ul id="projects"></ul>
 
