@@ -1,15 +1,11 @@
-import express from 'express';
-import projectsRouter from './routes/projects.js';
-import tasksRouter from './routes/tasks.js';
+import { createApp } from './app.js';
+import { loadConfig } from './config.js';
+import { openDatabase } from './db.js';
 
-const app = express();
-app.use(express.json());
-app.use(express.static('public'));
+const config = loadConfig();
+const db = openDatabase(config.databasePath);
+const app = createApp(db);
 
-app.use('/api/v1/projects', projectsRouter);
-app.use('/api/v1/projects', tasksRouter);
-
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Listening on http://localhost:${port}`);
+app.listen(config.port, () => {
+  console.log(`Project Tracker listening on http://localhost:${config.port}`);
 });

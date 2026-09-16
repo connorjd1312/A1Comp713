@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Project Tracker</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,11 +12,11 @@
   <h1 id="project-title">Project</h1>
 
   <form id="task-form">
-    <input id="title" placeholder="New task title">
+    <input id="title" placeholder="New task title" required>
     <button type="submit">Add task</button>
   </form>
 
-  <p id="error"></p>
+  <div id="error" role="alert"></div>
 
   <ul id="tasks"></ul>
 
